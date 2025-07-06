@@ -47,3 +47,15 @@ This project demonstrates how to integrate SSH command execution with the Gemini
     ```
 
     **Note:** For security, it is highly recommended to use SSH keys for authentication instead of providing passwords directly in the command line, especially in production environments. You can configure your SSH client (`~/.ssh/config`) to use keys.
+
+## Model Prompt Instructions
+
+To instruct the Gemini CLI model to manage the MCP server, you can use the following prompts:
+
+*   **Start the MCP server:** `Model, please start the MCP server.`
+*   **Restart the MCP server:** `Model, please restart the MCP server.`
+
+When prompted with these commands, the model will:
+
+*   **Start the MCP server:** Check if the `mcp_server.py` process is already running. If it's not, it will activate the virtual environment and run `python3 mcp_server.py` in the background.
+*   **Restart the MCP server:** Attempt to stop any running `mcp_server.py` process. Then, it will activate the virtual environment and start a new `python3 mcp_server.py` process in the background.
