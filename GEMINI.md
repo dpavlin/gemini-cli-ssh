@@ -13,7 +13,7 @@ A Python script that utilizes the `paramiko` library to establish SSH connection
 A Flask-based web server that acts as an MCP endpoint. It exposes an `/mcp/execute` endpoint that accepts POST requests containing remote host details (hostname, username, password) and the command to execute. It leverages `ssh_executor.py` to perform the actual SSH command execution and returns the results in a JSON format.
 
 ## `mcp_client.py`
-A Python client script designed to interact with the `mcp_server.py`. It takes remote host details and a command as command-line arguments, sends them as a JSON payload to the MCP server, and prints the JSON response from the server. This script serves as the bridge between the Gemini CLI and the SSH execution functionality.
+A Python client script designed to interact with the `mcp_server.py`. It takes remote host details (hostname, username, password) and the command to execute as command-line arguments, sends them as a JSON payload to the MCP server, and prints the JSON response from the server. This script serves as the bridge between the Gemini CLI and the SSH execution functionality.
 
 # Remote Machine Information (klin)
 
