@@ -51,7 +51,4 @@ The machine generally has ample idle CPU capacity. However, there were specific 
 ## Log Analysis (from `journalctl`)
 The high CPU and I/O wait during the identified period were primarily caused by:
 1.  **InfluxDB Operations:** Frequent "Cache snapshot" and "TSM compaction" tasks by the `influxd` process (`PID 6300`). These are resource-intensive operations involving significant disk I/O.
-2.  **Critical Disk Failure:** Repeated warnings from `smartd` indicated a **FAILED SMART self-check** on `/dev/sda`, along with failures in several SMART usage attributes (Program_Fail_Count_Chip, Erase_Fail_Count_Chip, Wear_Leveling_Count, Program_Fail_Cnt_Total, Erase_Fail_Count_Total). This is a critical hardware issue that would severely impact disk performance and lead to high I/O wait and system CPU usage.
-
-**Urgent Recommendation:**
-**Immediate data backup of `/dev/sda` is strongly recommended due to the detected SMART errors, followed by planning for disk replacement.**
+2.  **Disk SMART Warnings:** Repeated warnings from `smartd` indicated a **FAILED SMART self-check** on `/dev/sda`, along with failures in several SMART usage attributes (Program_Fail_Count_Chip, Erase_Fail_Count_Chip, Wear_Leveling_Count, Program_Fail_Cnt_Total, Erase_Fail_Count_Total). **Note:** The user has indicated that these errors have been present since the drive's first power-on, there is no firmware update available, and they consider these warnings ignorable as the drive continues to function without issues.
