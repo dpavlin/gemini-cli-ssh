@@ -4,6 +4,8 @@ This project demonstrates how to integrate SSH command execution with the Gemini
 
 ## Setup Instructions
 
+**Note:** If you are interacting with this repository through a model-managed environment (e.g., Gemini CLI), the model will handle the setup instructions for you, and you do not need to perform venv steps manually.
+
 1.  **Clone the repository:**
 
     ```bash
